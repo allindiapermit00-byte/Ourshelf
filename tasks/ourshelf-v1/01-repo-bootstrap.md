@@ -1,6 +1,6 @@
 ---
 title: Repository bootstrap
-progress: pending
+progress: done
 ---
 
 # Repository bootstrap
