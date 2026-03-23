@@ -1,6 +1,6 @@
 ---
 title: Firestore repository layer
-progress: pending
+progress: done
 ---
 
 # Firestore repository layer
