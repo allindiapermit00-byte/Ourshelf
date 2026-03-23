@@ -1,2 +1,3 @@
-// Firebase SDK instances — wired up in task 02
-export {}
+export { app } from './config'
+export { auth } from './auth'
+export { db } from './firestore'

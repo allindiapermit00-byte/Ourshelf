@@ -1,6 +1,6 @@
 ---
 title: Firebase project wiring and local emulators
-progress: pending
+progress: done
 ---
 
 # Firebase project wiring and local emulators
