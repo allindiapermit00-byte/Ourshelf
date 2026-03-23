@@ -1,6 +1,6 @@
 ---
 title: Typed data models, enums, and Firestore index config
-progress: pending
+progress: done
 ---
 
 # Typed data models, enums, and Firestore index config
