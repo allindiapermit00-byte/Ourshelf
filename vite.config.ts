@@ -17,5 +17,8 @@ export default defineConfig({
     setupFiles: ['./src/lib/test-utils/setup.ts'],
     css: true,
     passWithNoTests: true,
+    // Emulator integration tests share a single DB — run files sequentially
+    // so clearFirestoreEmulator() calls don't race across test files.
+    fileParallelism: false,
   },
 })
