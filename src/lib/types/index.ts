@@ -1,2 +1,9 @@
-// TypeScript interfaces and enums — wired up in task 03
-export {}
+export type { UserProfile } from './user'
+export type { Group, Membership, MembershipStatus } from './group'
+export { MemberRole } from './group'
+export type { Item } from './item'
+export { ItemType, ItemStatus } from './item'
+export type { BorrowRequest } from './request'
+export { RequestStatus } from './request'
+export type { Loan } from './loan'
+export { LoanReturnState } from './loan'
