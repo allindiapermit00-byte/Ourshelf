@@ -1,2 +1,5 @@
-// Auth feature — exports wired up in task 05
-export {}
+export { AuthProvider, AuthContext } from './AuthProvider'
+export type { AuthContextValue } from './AuthProvider'
+export { useAuth } from './useAuth'
+export { signInWithGoogle, signOut, bootstrapUserProfile } from './authService'
+export { default as SignInPage } from './SignInPage'
