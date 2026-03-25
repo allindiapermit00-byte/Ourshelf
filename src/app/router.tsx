@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 import SignInPage from '@/features/auth/SignInPage'
 import ProtectedRoute from './ProtectedRoute'
+import AppShell from './AppShell'
 import HomePage from './HomePage'
 
 export const router = createBrowserRouter([
@@ -10,6 +11,11 @@ export const router = createBrowserRouter([
   // Protected routes — unauthenticated users are redirected to /sign-in
   {
     element: <ProtectedRoute />,
-    children: [{ path: '/', element: <HomePage /> }],
+    children: [
+      {
+        element: <AppShell />,
+        children: [{ path: '/', element: <HomePage /> }],
+      },
+    ],
   },
 ])
