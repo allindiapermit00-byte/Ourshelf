@@ -1,6 +1,6 @@
 ---
 title: Authentication flow and protected shell
-progress: pending
+progress: done
 ---
 
 # Authentication flow and protected shell
