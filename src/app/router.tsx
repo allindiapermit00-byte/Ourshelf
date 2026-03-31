@@ -6,7 +6,7 @@ import HomePage from './HomePage'
 import CreateGroupPage from '@/features/groups/CreateGroupPage'
 import JoinGroupPage from '@/features/groups/JoinGroupPage'
 import GroupCatalogPage from '@/features/groups/GroupCatalogPage'
-import GroupsPage from '@/features/groups/GroupsPage'
+import GroupListPage from '@/features/groups/GroupListPage'
 
 export const router = createBrowserRouter([
   // Public routes
@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
         element: <AppShell />,
         children: [
           { path: '/', element: <HomePage /> },
-          { path: '/groups', element: <GroupsPage /> },
+          { path: '/groups', element: <GroupListPage /> },
           { path: '/groups/new', element: <CreateGroupPage /> },
           { path: '/groups/:groupId', element: <GroupCatalogPage /> },
           { path: '/join', element: <JoinGroupPage /> },

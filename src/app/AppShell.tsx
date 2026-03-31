@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import { useAuth } from '@/features/auth/useAuth'
 import { signOut } from '@/features/auth/authService'
+import { GroupProvider } from '@/features/groups/GroupProvider'
+import GroupSwitcher from '@/features/groups/GroupSwitcher'
 
 const NAV_LINKS = [
   { to: '/', label: 'Home', end: true },
@@ -19,6 +21,7 @@ export default function AppShell() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
+    <GroupProvider>
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* ── Top nav bar ─────────────────────────────────────────── */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-40">
@@ -46,8 +49,11 @@ export default function AppShell() {
             ))}
           </nav>
 
-          {/* Right side: avatar + sign-out */}
+          {/* Right side: group switcher + avatar + sign-out */}
           <div className="flex items-center gap-3">
+            <div className="hidden sm:block">
+              <GroupSwitcher />
+            </div>
             {user?.photoURL && (
               <img
                 src={user.photoURL}
@@ -141,5 +147,6 @@ export default function AppShell() {
         <Outlet />
       </main>
     </div>
+    </GroupProvider>
   )
 }
