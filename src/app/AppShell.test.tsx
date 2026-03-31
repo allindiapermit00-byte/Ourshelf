@@ -14,6 +14,12 @@ vi.mock('@/features/auth/authService', () => ({
   signOut: vi.fn(),
 }))
 
+// GroupProvider fetches memberships/groups — return empty so GroupSwitcher stays hidden
+vi.mock('@/lib/repositories', () => ({
+  getMembershipsForUser: vi.fn().mockResolvedValue([]),
+  getGroup: vi.fn().mockResolvedValue(null),
+}))
+
 function renderAppShell(initialPath = '/') {
   return render(
     <MemoryRouter initialEntries={[initialPath]}>

@@ -1,6 +1,6 @@
 ---
 title: Group list page and active group context
-progress: pending
+progress: done
 ---
 
 # Group list page and active group context
