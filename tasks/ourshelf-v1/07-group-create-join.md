@@ -1,6 +1,6 @@
 ---
 title: Create group and join group flow
-progress: pending
+progress: done
 ---
 
 # Create group and join group flow

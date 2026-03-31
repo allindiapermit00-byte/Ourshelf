@@ -31,6 +31,26 @@ export async function getMembersForGroup(groupId: string): Promise<Membership[]>
 }
 
 /**
+ * Return the active Membership for a specific (userId, groupId) pair.
+ * Returns `null` if no matching membership exists.
+ */
+export async function getMembershipForUserInGroup(
+  userId: string,
+  groupId: string
+): Promise<Membership | null> {
+  const q = query(
+    collection(db, COL),
+    where('userId', '==', userId),
+    where('groupId', '==', groupId),
+    where('status', '==', 'active')
+  )
+  const snap = await getDocs(q)
+  if (snap.empty) return null
+  const d = snap.docs[0]
+  return { id: d.id, ...d.data() } as Membership
+}
+
+/**
  * Create a new Membership document with an auto-generated ID.
  * Returns the created Membership (with its new `id`).
  */
